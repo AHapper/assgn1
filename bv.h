@@ -10,7 +10,7 @@ typedef struct bitV {
     uint32_t length;
 } bitV;
 
-void printVector(bitV *myvector);
+void printVector(bitV *myvector); // checking myself
 
 bitV *newVec(uint32_t); // Create a new vector of specified length 
 
