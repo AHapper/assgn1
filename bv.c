@@ -8,7 +8,7 @@ bitV *newVec(uint32_t len){
     int len_b = len/8;
     bitV *myvector = malloc(sizeof(bitV) + len_b * sizeof(uint8_t));
     int sum = sizeof(bitV) + len_b * sizeof(uint8_t);
-    printf("the sum is %d\n", sum);
+    printf("the sum is %d\n", sum); // check to make sure malloc is accurate
     myvector->length = len;
     for (int i = 0; i < len_b; i++){
     //    myvector->vector[i] = 0;
@@ -18,12 +18,12 @@ bitV *newVec(uint32_t len){
 
 void printVector(bitV *myvector)
 {
-    printf("length : %d\n",myvector->length);
-    printf("vector : %s\n",myvector->vector);
+    printf("length : %d\n",myvector->length); // check 
+    printf("vector : %s\n",myvector->vector); // check
 }
  
-
-/* void delVec(bitV *){
+// commented out for now 
+/* void delVec(bitV *){ 
 
 };
 
