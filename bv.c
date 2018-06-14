@@ -1,43 +1,69 @@
-// assign1
+// Aneka Happer
+// June 5, 2018
 // bv.c
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "bv.h"
 
+// definition of functions defined in bv.h
 bitV *newVec(uint32_t len){
-    int len_b = len/8;
-    bitV *myvector = malloc(sizeof(bitV) + len_b * sizeof(uint8_t));
-    int sum = sizeof(bitV) + len_b * sizeof(uint8_t);
-    printf("the sum is %d\n", sum); // check to make sure malloc is accurate
+    bitV *myvector = (bitV *) malloc(sizeof(bitV));
+    myvector->vector = (uint8_t*) malloc(len * sizeof(uint8_t) / 8 + 1);
     myvector->length = len;
-    for (int i = 0; i < len_b; i++){
-    //    myvector->vector[i] = 0;
-    };
     return myvector;
 };
 
-void printVector(bitV *myvector)
-{
-    printf("length : %d\n",myvector->length); // check 
-    printf("vector : %s\n",myvector->vector); // check
-}
- 
-// commented out for now 
-/* void delVec(bitV *){ 
-
+void oneVec(bitV *v){
+    int arraylen = v->length / 8 + 1;
+    for(int i = 0; i < arraylen; i++){
+        v->vector[i] = 0b11111111;
+    };
 };
 
-void oneVec(bitV *){
+void setBit(bitV *v, uint32_t k){
+    int i = k/8;
+    int pos = k%8;
 
+    uint8_t flag = 1; 
+
+    flag = flag << pos;
+    v->vector[i] = v->vector[i] | flag;
 };
 
-void setBit(bitV *, uint32_t){
 
+void clrBit(bitV *v, uint32_t k){
+    int i = k/8;
+    int pos = k%8;
+
+    uint8_t flag = 1; 
+
+    flag = flag << pos;
+    flag = ~flag;
+
+    v->vector[i] = v->vector[i] & flag;
 };
 
-void clrBit(bitV *, uint32_t){
 
+uint8_t valBit(bitV *v, uint32_t k){
+    int i = k/8;
+    int pos = k%8;
+    int temp = v->vector[i];
+
+    uint8_t flag = 1;
+
+    temp = temp >> pos;
+    temp = temp & flag;
+
+    return temp;
 };
+
+uint32_t lenVec(bitV *v){
+    int len = v->length;
+
+    return len;
+};
+
 
 uint8_t valBit(bitV *, uint32_t){
     return "0";
