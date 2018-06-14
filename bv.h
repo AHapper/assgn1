@@ -1,7 +1,10 @@
-// assign1
+// Aneka Happer
+// June 5, 2018
 // bv.h
-#ifndef _BVector
-#define _BVector
+// from assign1, credited to D. Long
+
+# ifndef _BVector
+# define _BVector
 #include <stdint.h>
 #include <stdio.h>
 
@@ -9,8 +12,6 @@ typedef struct bitV {
     uint8_t *vector;
     uint32_t length;
 } bitV;
-
-void printVector(bitV *myvector); // checking myself
 
 bitV *newVec(uint32_t); // Create a new vector of specified length 
 
