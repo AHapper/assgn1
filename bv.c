@@ -63,12 +63,3 @@ uint32_t lenVec(bitV *v){
 
     return len;
 };
-
-
-uint8_t valBit(bitV *, uint32_t){
-    return "0";
-};
-
-uint32_t lenVec(bitV *){
-    return 0;
-};
