@@ -72,5 +72,3 @@ uint8_t valBit(bitV *, uint32_t){
 uint32_t lenVec(bitV *){
     return 0;
 };
-
-*/
