@@ -9,7 +9,7 @@
 #include "bv.h"
 #include "sieve.h"
 
-// Sieve of Eratosthenes from assgin1
+// Sieve of Eratosthenes
 void sieve(bitV *v) 
 {
     oneVec(v); // Assume all are prime
